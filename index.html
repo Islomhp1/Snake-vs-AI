@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snake vs AI — V2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-wrapper">
+
+    <div class="ai-panel lvl-1" id="aiPanel">
+      <div class="ai-avatar" id="aiAvatar">🤖</div>
+      <div class="ai-speech"><p id="aiText">Tayyor bo'lsang, boshlaymiz 😏</p></div>
+      <button class="mute-btn" id="muteBtn" title="Ovozni yoqish/o'chirish">🔊</button>
+    </div>
+
+    <div class="hud">
+      <div class="hud-item">SCORE: <span id="scoreVal">0</span> / 30</div>
+      <div class="hud-item">ENG YAXSHI: <span id="bestVal">0</span></div>
+      <div class="hud-item">DARAJA: <span id="diffVal">—</span></div>
+      <div class="hud-item level">LEVEL: <span id="levelVal">1</span></div>
+    </div>
+
+    <div class="board-frame">
+      <canvas id="gameCanvas" width="500" height="500"></canvas>
+
+      <div id="startOverlay" class="overlay">
+        <h1>SNAKE <span class="vs">vs</span> AI <span class="version-tag">V2</span></h1>
+        <p>Ilonni boshqarib olma yig'. 30 ta haqiqiy score yig'ib g'alaba qil — lekin AI senga xalaqit berishga urinadi.</p>
+        <div class="diff-grid">
+          <button class="diff-btn" data-diff="easy">
+            <span class="diff-name">Oson</span>
+            <span class="diff-desc">Kamroq xalaqit, sekinroq qobiliyatlar</span>
+          </button>
+          <button class="diff-btn" data-diff="medium">
+            <span class="diff-name">O'rtacha</span>
+            <span class="diff-desc">Standart tajriba</span>
+          </button>
+          <button class="diff-btn" data-diff="hard">
+            <span class="diff-name">Qiyin</span>
+            <span class="diff-desc">5-levelda AI seni poylab, kombo tashlaydi</span>
+          </button>
+          <button class="diff-btn" data-diff="impossible">
+            <span class="diff-name">O'tib bo'lmas</span>
+            <span class="diff-desc">4-leveldan AI kombolari boshlanadi</span>
+          </button>
+        </div>
+        <p class="hint"><b>W</b> yuqoriga · <b>A</b> chapga · <b>S</b> pastga · <b>D</b> o'ngga</p>
+      </div>
+
+      <div id="endOverlay" class="overlay hidden">
+        <h1 id="endTitle">GAME OVER</h1>
+        <p id="endMessage"></p>
+        <p class="end-score" id="endScore"></p>
+        <button id="restartBtn">DARAJANI QAYTA TANLASH</button>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span>🍎 Food</span>
+      <span>⚡ Speed</span>
+      <span>🐌 Slow</span>
+      <span>☠️ Poison</span>
+      <span>🧊 Freeze</span>
+      <span>🌀 Teleport</span>
+      <span>🧱 Wall</span>
+    </div>
+    <div class="hint">Level oshgani sari AI aqllashadi, ko'proq xalaqit beradi va yashirin qobiliyatlarini ishga soladi.</div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
